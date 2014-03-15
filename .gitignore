@@ -1,6 +1,7 @@
 # Project ignores
 /dist
 /vendor/*/
+/tmp
 
 # Always-ignore extensions
 *.diff

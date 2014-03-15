@@ -6,6 +6,8 @@ Router.map(function() {
   });
   this.route('login');
   this.route('logout');
+  this.route('forgot-username');
+  this.route('forgot-password');
 });
 
 export default Router;

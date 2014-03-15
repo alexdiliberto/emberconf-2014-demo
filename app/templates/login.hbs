@@ -1,1 +1,13 @@
 <h2>Login</h2>
+
+<form method="post" action="">
+  <label for="username">Username {{input type="text" id="username" name="username" value=username}}</label>
+  <label for="password">Password {{input type="password" id="password" name="password" value=password}}</label>
+
+  <button {{action "login"}}>Login</button>
+</form>
+
+<ul>
+  <li>{{#link-to "forgot-username"}}Forgot Username?{{/link-to}}</li>
+  <li>{{#link-to "forgot-password"}}Forgot Password?{{/link-to}}</li>
+</ul>

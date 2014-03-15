@@ -3,8 +3,8 @@ emberconf-2014-demo
 
 A demo app for two EmberConf 2014 presentations:
 
-Alex DiLiberto - 
-Nathan Hammond - Controlling Route Traversal with Flows
+- Alex DiLiberto - 
+- Nathan Hammond - [Controlling Route Traversal with Flows](http://emberconf.com/schedule.html#hammond)
 
 ## Notes
 

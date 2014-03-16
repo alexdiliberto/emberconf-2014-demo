@@ -3,8 +3,16 @@ var Router = Ember.Router.extend(); // ensure we don't share routes between all 
 Router.map(function() {
   this.resource('authenticated', { path: '/' }, function() {
     this.route('accounts', { path: '/' });
+    this.route('tour');
   });
-  this.route('login');
+
+  this.resource('login', function() {
+    this.route('one-time-password');
+    this.route('one-time-password-setup', { path: 'one-time-password/setup '});
+    this.route('terms-of-service');
+    this.route('electronic-signature');
+  });
+
   this.route('logout');
   this.route('forgot-username');
   this.route('forgot-password');

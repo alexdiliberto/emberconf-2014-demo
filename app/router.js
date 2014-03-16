@@ -1,11 +1,15 @@
 var Router = Ember.Router.extend(); // ensure we don't share routes between all Router instances
 
 Router.map(function() {
+  // Routes in authenticated space require full authentication.
+  // "Top level" routes will be authenticated.
   this.resource('authenticated', { path: '/' }, function() {
+    // Push the accounts route to be the "index"
     this.route('accounts', { path: '/' });
     this.route('tour');
   });
 
+  // Routes in login space require partial authentication.
   this.resource('login', function() {
     this.route('one-time-password');
     this.route('one-time-password-setup', { path: 'one-time-password/setup'});
@@ -13,6 +17,7 @@ Router.map(function() {
     this.route('electronic-signature');
   });
 
+  // Routes in public space require no authentication.
   this.route('logout');
   this.route('forgot-username');
   this.route('forgot-password');

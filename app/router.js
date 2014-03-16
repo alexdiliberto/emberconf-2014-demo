@@ -11,8 +11,11 @@ Router.map(function() {
 
   // Routes in login space require partial authentication.
   this.resource('login', function() {
-    this.route('one-time-password');
-    this.route('one-time-password-setup', { path: 'one-time-password/setup'});
+    this.resource('one-time-password', function() {
+      this.route('delivery');
+      this.route('setup');
+      this.route('authenticate');
+    });
     this.route('terms-of-service');
     this.route('electronic-signature');
   });

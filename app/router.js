@@ -24,6 +24,7 @@ Router.map(function() {
   this.route('logout');
   this.route('forgot-username');
   this.route('forgot-password');
+  this.route('e-sign-do-not-accept');
 });
 
 export default Router;

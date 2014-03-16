@@ -7,15 +7,22 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, adipisci, natus, harum, dicta maxime voluptate nisi illo doloremque quidem fugit ratione impedit dignissimos cupiditate fugiat unde nostrum ut sequi quas.</p>
 </div>
 
-<div>
-  {{input type="checkbox"}}
-</div>
-<div>
-  <p><b>By checking this box, you agree that:</b></p>
-  <ul>
-    <li>foo</li>
-    <li>bar</li>
-    <li>baz</li>
-    <li>qux</li>
-  </ul>
-</div>
+
+<form method="post" action="">
+  <div>
+    {{input type="checkbox"}}
+  </div>
+  <div>
+    <p><b>By checking this box, you agree that:</b></p>
+    <ul>
+      <li>foo</li>
+      <li>bar</li>
+      <li>baz</li>
+      <li>qux</li>
+    </ul>
+  </div>
+  <div>
+    <button {{action "eSignAccept"}}>Accept</button>
+    <button {{action "eSignDoNotAccept"}}>Do Not Accept</button>
+  </div>
+</form>

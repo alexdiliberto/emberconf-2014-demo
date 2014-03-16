@@ -1,1 +1,8 @@
 <h3>Select Delivery Method</h3>
+
+<form action="" method="post">
+{{#each itemController="one-time-password/delivery-method"}}
+<label {{bind-attr for=htmlid}}>{{input type="radio" id=htmlid name="delivery-method"}} {{type}} - {{value}}</label>
+{{/each}}
+<button {{action "submit"}}>Submit</button>
+</form>

@@ -8,7 +8,7 @@ Router.map(function() {
 
   this.resource('login', function() {
     this.route('one-time-password');
-    this.route('one-time-password-setup', { path: 'one-time-password/setup '});
+    this.route('one-time-password-setup', { path: 'one-time-password/setup'});
     this.route('terms-of-service');
     this.route('electronic-signature');
   });

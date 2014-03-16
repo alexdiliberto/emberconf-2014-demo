@@ -13,8 +13,8 @@ Router.map(function() {
   this.resource('login', function() {
     this.resource('one-time-password', function() {
       this.route('delivery');
-      this.route('setup');
       this.route('authenticate');
+      this.route('setup');
     });
     this.route('terms-of-service');
     this.route('electronic-signature');

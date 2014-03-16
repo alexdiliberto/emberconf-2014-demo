@@ -22,7 +22,7 @@ export default Ember.Route.extend({
 
           // Use replaceState instead of pushState for requests coming from the full login route.
           var method = (leafCurrentHandler.indexOf('login') === 0 ? "replaceWith" : "transitionTo");
-          this[method]('authenticated.accounts');
+          this[method]('accounts');
         }
       } else {
         // TODO: Remove username and password, set error.

@@ -5,7 +5,10 @@ Router.map(function() {
   // "Top level" routes will be authenticated.
   this.resource('authenticated', { path: '/' }, function() {
     // Push the accounts route to be the "index"
-    this.route('accounts', { path: '/' });
+    this.resource('accounts', { path: '/' });
+    this.resource('transfer');
+    this.resource('pay-bills');
+    this.resource('statements');
     this.route('tour');
   });
 

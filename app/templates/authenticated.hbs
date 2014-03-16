@@ -1,4 +1,13 @@
 <h2>Authenticated</h2>
 <button {{action "logout"}}>Logout</button>
 
+<nav>
+  <ul>
+    <li>{{link-to 'Accounts' 'accounts'}}</li>
+    <li>{{link-to 'Transfer' 'transfer'}}</li>
+    <li>{{link-to 'Pay Bills' 'pay-bills'}}</li>
+    <li>{{link-to 'Statements' 'statements'}}</li>
+  </ul>
+</nav>
+
 {{outlet}}

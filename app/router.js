@@ -15,7 +15,7 @@ Router.map(function() {
   this.resource('login', function() {
     this.resource('one-time-password', function() {
       this.route('setup');
-      this.route('delivery');
+      this.route('select-delivery-method');
       this.route('authenticate');
       this.route('register-device');
     });
@@ -26,8 +26,8 @@ Router.map(function() {
 
   // Routes in public space require no authentication.
   this.route('logout');
-  this.route('forgot-username');
-  this.route('forgot-password');
+  this.route('recover-username');
+  this.route('recover-password');
   this.route('e-sign-do-not-accept');
 
   this.route('contact');

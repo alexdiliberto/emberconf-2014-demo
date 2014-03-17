@@ -1,10 +1,10 @@
-<h2>Forgot Password</h2>
+<h2>Recover Username</h2>
 
 <form method="post" action="">
-  <label for="username">Username {{input type="text" id="username" name="username" value=username}}</label>
+  <label for="email">Email {{input type="text" id="email" name="email" value=email}}</label>
   <label for="phonenumber">Phone Number {{input type="text" id="phonenumber" name="phonenumber" value=phonenumber}}</label>
 
-  <button {{action "submit"}}>Email Instructions</button>
+  <button {{action "recoverUsername"}}>Email Username</button>
 </form>
 
 <p>Still need help? {{#link-to 'contact'}}Find out how to reach us!{{/link-to}}</p>

@@ -5,10 +5,9 @@ Router.map(function() {
   // "Top level" routes will be authenticated.
   this.resource('authenticated', { path: '/' }, function() {
     // Push the accounts route to be the "index"
-    this.resource('accounts', { path: '/' });
-    this.resource('transfer');
-    this.resource('pay-bills');
-    this.resource('statements');
+    this.resource('accounts', { path: '/' }, function() {});
+    this.resource('transfers', function() {});
+    this.resource('statements', function() {});
     this.route('tour');
   });
 
@@ -22,6 +21,7 @@ Router.map(function() {
     });
     this.route('terms-of-service');
     this.route('electronic-signature');
+    this.route('reset-password')
   });
 
   // Routes in public space require no authentication.
@@ -29,6 +29,8 @@ Router.map(function() {
   this.route('forgot-username');
   this.route('forgot-password');
   this.route('e-sign-do-not-accept');
+
+  this.route('contact');
 });
 
 export default Router;

@@ -1,3 +1,12 @@
 <h2>Forgot Username</h2>
 
+<form method="post" action="">
+  <label for="email">Email {{input type="text" id="email" name="email" value=email}}</label>
+  <label for="phonenumber">Phone Number {{input type="text" id="phonenumber" name="phonenumber" value=phonenumber}}</label>
+
+  <button {{action "submit"}}>Email Username</button>
+</form>
+
+<p>Still need help? {{#link-to 'contact'}}Find out how to reach us!{{/link-to}}</p>
+
 <p>{{#link-to "login"}}Back to login.{{/link-to}}</p>

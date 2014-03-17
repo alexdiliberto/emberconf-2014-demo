@@ -1,0 +1,12 @@
+<h3>Register Device</h3>
+
+<p>Would you liketo register this device?</p>
+
+<form action="" method="post">
+  {{#radiogroup name="register" value=shouldRegister}}
+    <label for="register-yes">{{radio id="register-yes" value="true"}} Yes, this is a trusted device.</label>
+    <label for="register-no">{{radio id="register-no" value="false"}} No, this is a shared device.</label>
+  {{/radiogroup}}
+
+  <button {{action "submit"}}>Submit</button>
+</form>

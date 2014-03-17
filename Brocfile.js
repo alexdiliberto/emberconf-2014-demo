@@ -31,7 +31,7 @@ module.exports = function (broccoli) {
 
   var styles = pickFiles(app, {
     srcDir: 'emberconf-2014-demo/styles',
-    destDir: 'assets' 
+    destDir: 'assets'
   });
 
   tests = pickFiles(tests, {
@@ -67,7 +67,8 @@ module.exports = function (broccoli) {
       'handlebars.js',
       'ember.js',
       'ember-data.js',
-      'ember-resolver.js'
+      'ember-resolver.js',
+      'radio-button.js'
     ],
 
     wrapInEval: env !== 'production',

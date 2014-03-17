@@ -1,3 +1,3 @@
 export default Ember.ArrayController.extend({
-  deliveryMethod: undefined
+  deliveryMethodId: undefined
 });

@@ -8,3 +8,10 @@ html, body {
 .ember-view { animation: domChanged 1s; -webkit-animation: domChanged 1s; }
 
 .met { color: green; }
+
+
+/* App specific SCSS */
+
+.main-nav ul {
+  list-style-type: none;
+}

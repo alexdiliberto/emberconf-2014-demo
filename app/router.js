@@ -21,7 +21,8 @@ Router.map(function() {
     });
     this.route('electronic-consent');
     this.route('terms-of-service-consent');
-    this.route('reset-password')
+    this.route('reset-password');
+    this.route('complete');
   });
 
   // Routes in public space require no authentication.

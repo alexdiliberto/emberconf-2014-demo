@@ -2,6 +2,12 @@
 
 <p>Please check your target delivery method for the one-time-password.</p>
 
+{{#if hasMultipleMethods}}
+<p>Can't access this option? {{#link-to 'one-time-password.select-delivery-method' replace=true}}Try another option.{{/link-to}}</p>
+{{else}}
+<p>Can't access this option? {{#link-to 'contact' replace=true}}Contact us for help.{{/link-to}}</p>
+{{/if}}
+
 <form action="" method="post">
   <label for="otp">One Time Password {{input type="text" name="otp" id="otp" value=otp}}</label>
   <button {{action "authenticate"}}>Submit</button>

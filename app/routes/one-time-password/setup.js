@@ -1,11 +1,12 @@
 export default Ember.Route.extend({
-  model: function() {
-    return [];
-  },
-  afterModel: function(model) {
+  beforeModel: function() {
+    var model = this.modelFor('one-time-password');
     if (model.length > 0) {
       this.replaceWith('one-time-password.select-delivery-method');
     }
+  },
+  model: function() {
+    return this.modelFor('one-time-password');
   },
 
   actions: {
@@ -22,8 +23,6 @@ export default Ember.Route.extend({
           type: type,
           value: value
         });
-      } else {
-        // TODO: Show error.
       }
     },
     remove: function(deliveryMethod) {

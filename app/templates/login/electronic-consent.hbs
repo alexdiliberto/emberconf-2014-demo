@@ -1,0 +1,13 @@
+<h2>Electronic Consent</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, eligendi, voluptate molestiae incidunt voluptatibus nesciunt dignissimos culpa molestias aliquid accusantium similique dolore minima minus atque cupiditate reprehenderit quo cum totam.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, error, at, adipisci tempora voluptatum ea pariatur eius deleniti ab nostrum quasi iusto et corporis suscipit laudantium obcaecati odio similique nihil.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quas harum eligendi facere non quod quae quaerat ducimus! Molestiae, adipisci a nam facilis amet quasi molestias quia. Nobis, eum commodi.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, adipisci, natus, harum, dicta maxime voluptate nisi illo doloremque quidem fugit ratione impedit dignissimos cupiditate fugiat unde nostrum ut sequi quas.</p>
+
+<form method="post" action="">
+  <label for="electronic-consent">{{input type="checkbox" name="electronic-consent" id="electronic-consent" checked=isConsenting}} I agree to receive documents electronically.</label>
+
+  <button {{action "reject"}}>Reject</button>
+  <button {{bind-attr disabled=isNotConsenting}} {{action "electronicConsent"}}>Accept</button>
+</form>

@@ -5,3 +5,10 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ipsum obcaecati repellat ratione laborum voluptate rem numquam reprehenderit. Nobis, ea velit molestias nemo distinctio odit obcaecati voluptatum culpa in enim! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, unde, est sequi laudantium animi repellat iusto ipsam excepturi nihil labore tempora in quas alias placeat minima illo magnam aliquid incidunt!</p>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, voluptatem, in incidunt officia nobis dignissimos. Ratione, error commodi ut cumque et incidunt placeat similique tempore ducimus tempora qui doloribus deleniti.</p>
+
+<form method="post" action="">
+  <label for="tos-consent">{{input type="checkbox" name="tos-consent" id="tos-consent" checked=isConsenting}} I agree to the Terms of Service.</label>
+
+  <button {{action "reject"}}>Reject</button>
+  <button {{bind-attr disabled=isNotConsenting}} {{action "tosConsent"}}>Accept</button>
+</form>

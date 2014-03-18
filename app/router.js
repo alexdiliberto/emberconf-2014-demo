@@ -19,8 +19,8 @@ Router.map(function() {
       this.route('authenticate');
       this.route('register-device');
     });
-    this.route('terms-of-service');
-    this.route('electronic-signature');
+    this.route('electronic-consent');
+    this.route('terms-of-service-consent');
     this.route('reset-password')
   });
 
@@ -28,7 +28,6 @@ Router.map(function() {
   this.route('logout');
   this.route('recover-username');
   this.route('recover-password');
-  this.route('e-sign-do-not-accept');
 
   this.route('contact');
 });

@@ -3,7 +3,8 @@ export default Ember.Route.extend({
     didTransition: function(transition) {
       // If you see this route the user should be logged out.
       if (this.controllerFor('login').get('authenticated')) {
-        App.reset();
+        // FIXME: How would I do this without using the global namespace?
+        Emberconf2014DemoApp.reset();
       }
     }
   }

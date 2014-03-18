@@ -1,5 +1,5 @@
 <ul>
 {{#each}}
-  <li>{{this}}</li>
+  <li>{{#link-to 'accounts.details' this}} {{name}} - ${{amount}} {{/link-to}}</li>
 {{/each}}
 </ul>

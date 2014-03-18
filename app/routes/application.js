@@ -2,6 +2,7 @@ export default Ember.Route.extend({
   actions: {
     login: function() {
       var LoginController = this.controllerFor('login');
+      var LoginIndexController = this.controllerFor('login.index');
 
       // Logging in, store the state of authentication.
       // TODO: Make authentication hit a server.
@@ -25,7 +26,11 @@ export default Ember.Route.extend({
           this[method]('accounts');
         }
       } else {
-        // TODO: Remove username and password, set error.
+        LoginIndexController.setProperties({
+          username: "",
+          password: "",
+          error: "There was an error."
+        });
       }
     },
     logout: function() {

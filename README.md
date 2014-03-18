@@ -8,6 +8,8 @@ A demo app for two EmberConf 2014 presentations:
 
 ## Notes
 
+IMPORTANT: This application is currently incomplete. In order to navigate around it you must directly manipulate the URL or even the underlying code. Just a note in case you're taking @nathanhammond up on the beer-or-coffee-for-code-review exchange. :)
+
 ```bash
 npm install -g bower ember-cli
 ```

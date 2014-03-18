@@ -6,9 +6,15 @@ export default Ember.Route.extend({
     model hook to yeild the correct "account" object.
   */
   model: function(params) {
-    var accounts = this.modelFor('accounts');
-    return accounts.filter(function(account) {
-      return account.id == params.account_id;
+    return this.modelFor('accounts').filter(function(acct) {
+      return acct.id == params.account_id;
     })[0];
+  },
+  actions: {
+    didTransition: function() {
+      if(!this.currentModel) {
+        this.transitionTo('accounts');
+      }
+    }
   }
 });

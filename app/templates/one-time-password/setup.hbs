@@ -1,6 +1,16 @@
 <h3>Setup</h3>
 
+{{#if hasNoMethods}}
+  No methods set up.
+{{else}}
+  {{#each}}
+    {{type}} - {{value}} <button {{action "remove" this}}>Remove</button>
+  {{/each}}
+{{/if}}
+
 <form action="" method="post">
-  <label for="new-otp-method">Phone or Email {{input type="text" id="new-otp-method" name="new-otp-method" value=newvalue}}</label>
-  <button {{action "save"}}>Save</button>
+  <label for="new-otp-method">Phone or Email {{input type="text" id="new-otp-method" name="new-otp-method" value=value}}</label>
+  <button {{bind-attr disabled=isNotValid}} {{action "add"}}>Add</button>
 </form>
+
+<button {{bind-attr disabled=hasNoMethods}} {{action "commit"}}>Continue</button>

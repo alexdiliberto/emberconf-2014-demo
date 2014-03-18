@@ -8,8 +8,15 @@ export default Ember.Route.extend({
   },
   afterModel: function(model) {
     // TODO: Protect from errors.
+
+    // The user needs to create delivery methods for their OTPs.
     if (model.length === 0) {
       this.replaceWith('one-time-password.setup');
+    }
+
+    // The user only has one delivery method so we can skip selection and just ask them to authenticate.
+    if (model.length === 1) {
+      this.replaceWith('one-time-password.authenticate');
     }
   },
   actions: {

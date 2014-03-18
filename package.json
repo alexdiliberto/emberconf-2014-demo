@@ -1,6 +1,5 @@
 {
   "name": "emberconf-2014-demo",
-  "namespace": "emberconf-2014-demo",
   "APIMethod": "stub",
   "version": "0.0.0",
   "private": true,

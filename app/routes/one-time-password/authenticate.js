@@ -12,6 +12,9 @@ export default Ember.Route.extend({
   actions: {
     authenticate: function() {
       // TODO: Make this actually communicate with the server.
+      var LoginController = this.controllerFor('login');
+      LoginController.set('isAuthorized', true);
+
       this.replaceWith('one-time-password.register-device');
     }
   }

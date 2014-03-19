@@ -2,9 +2,15 @@ export default Ember.Route.extend({
   beforeModel: function(transition) {
     var LoginController = this.controllerFor('login');
 
-    // TODO: Make this aware of the full and partial authentication scenarios.
-    if (!LoginController.get('authenticated')) {
+    if (LoginController.get('isNotAuthorized')) {
       // We need to redirect the user.
+
+      // Start their login process over.
+      LoginController.setProperties({
+        isAuthenticated: false,
+        isAuthorized: false
+      });
+
       // Capture where the user was going for later.
       LoginController.set('transition', transition);
 

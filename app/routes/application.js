@@ -4,10 +4,25 @@ export default Ember.Route.extend({
       var LoginController = this.controllerFor('login');
       var LoginIndexController = this.controllerFor('login.index');
 
+      // Save off and reset username and password so that they never stick around.
+      // Lots of login-focused activities need this sort of cleanup to be "safe."
+      var username = LoginIndexController.get('username');
+      var password = LoginIndexController.get('password');
+
+      LoginIndexController.setProperties({
+        username: "",
+        password: ""
+      });
+
       // Logging in, store the state of authentication.
       // TODO: Make authentication hit a server.
       if (true) {
-        LoginController.set('authenticated', true);
+        LoginController.set('isAuthenticated', true);
+
+        // TODO: Redirect to the next step. Which is?
+
+        this.replaceWith('one-time-password');
+        return;
 
         // Figure out where to go.
         var transition = LoginController.get('transition');
@@ -26,11 +41,7 @@ export default Ember.Route.extend({
           this[method]('accounts');
         }
       } else {
-        LoginIndexController.setProperties({
-          username: "",
-          password: "",
-          error: "There was an error."
-        });
+        LoginIndexController.set("error", "There was an error.");
       }
     },
     logout: function() {

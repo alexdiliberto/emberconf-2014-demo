@@ -19,11 +19,8 @@ export default Ember.Route.extend({
     },
     cycleAccounts: function(curAccountId) {
       var model = this.modelFor('accounts');
-      if (curAccountId === -1 || curAccountId === model.length) {
-        this.transitionTo('accounts.details', this._filterAccountId(model, 1));
-      } else {
-        this.transitionTo('accounts.details', this._filterAccountId(model, curAccountId+1));
-      }
+      var index = (curAccountId === -1 || curAccountId === model.length) ? 1 : curAccountId + 1;
+      this.transitionTo('accounts.details', this._filterAccountId(model, index));
     }
   }
 });

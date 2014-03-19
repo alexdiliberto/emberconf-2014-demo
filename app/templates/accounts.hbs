@@ -1,11 +1,13 @@
 <h2>Accounts</h2>
 
-<div class="accounts">
-  <ul class="accounts-ul">
-  {{#each}}
-    <li>{{#link-to 'accounts.details' this}} {{name}} - ${{amount}} {{/link-to}}</li>
-  {{/each}}
-  </ul>
-</div>
+<div class="flex-continer">
+  <div class="accounts">
+    <ul class="accounts-ul">
+    {{#each}}
+      <li>{{#link-to 'accounts.details' this}} {{name}} - ${{amount}} {{/link-to}}</li>
+    {{/each}}
+    </ul>
+  </div>
 
-{{outlet}}
+  {{outlet}}
+</div>

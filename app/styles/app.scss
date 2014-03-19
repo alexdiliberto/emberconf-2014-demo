@@ -144,8 +144,8 @@ header {
   display: inline-block;
 }
 
-.accounts {
-  width: 50%;
+.accounts-details {
+  margin-left: 5em;
 }
 
 .accounts-ul {
@@ -172,4 +172,10 @@ header {
 
 .total-amt-text {
   font-size: 2em;
+}
+
+.flex-continer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }

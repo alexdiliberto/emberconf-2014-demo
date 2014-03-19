@@ -138,6 +138,15 @@ header {
   }
 }
 
+.accounts,
+.accounts-details {
+  display: inline-block;
+}
+
+.accounts {
+  width: 50%;
+}
+
 .accounts-ul {
   list-style-type: none;
   padding-left: 0;
@@ -151,6 +160,9 @@ header {
       -webkit-transition: .25s;
       transition: .25s;
       &:hover, &:focus {
+        background-color: darken($main-bg, 10%);
+      }
+      &.active {
         background-color: darken($main-bg, 5%);
       }
     }

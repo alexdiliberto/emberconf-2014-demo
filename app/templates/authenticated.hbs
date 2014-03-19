@@ -1,12 +1,12 @@
 <h2>Authenticated</h2>
-<button {{action "logout"}}>Logout</button>
 
-<nav class="main-nav">
+<nav class="main-nav cf">
   <ul>
     <li>{{#link-to 'accounts'}}Accounts{{/link-to}}</li>
     <li>{{#link-to 'transfers'}}Transfers{{/link-to}}</li>
     <li>{{#link-to 'statements'}}Statements{{/link-to}}</li>
   </ul>
+  <button class="logout-btn" {{action "logout"}}>Logout</button>
 </nav>
 
 {{outlet}}

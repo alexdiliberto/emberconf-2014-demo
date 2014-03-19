@@ -1,6 +1,48 @@
 /* Put your CSS here */
+$footer-height: 100px;
+$main-width: 60em; /* 960px */
+
+$main-bg: #a5a5a5;
+$main-bg2: #8b8b8b;
+$color-1: #0381e0;
+$color-2: #0464ad;
+$color-3: #03477a;
+
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $color-1;
+}
+
 html, body {
-    margin: 20px;
+  height: 100%;
+}
+
+.ember-application > .ember-view {
+  height: 100%;
+  -webkit-box-shadow: 0px 10px 25px 3px $color-3;
+  box-shadow: 0px 10px 25px 3px $color-3;
+}
+
+body {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  max-width: $main-width;
+  margin: 0 auto;
+  background-color: $main-bg;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {
+    clear: both;
 }
 
 @keyframes domChanged { from { background: yellow; } }
@@ -9,9 +51,68 @@ html, body {
 
 .met { color: green; }
 
+a {
+  color: white;
+}
 
-/* App specific SCSS */
+button {
+  padding: 1em;
+  &:hover {
+    cursor: pointer;
+  }
+}
 
-.main-nav ul {
-  list-style-type: none;
+.ember-text-field {
+  padding: 1em;
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -$footer-height;
+  padding: 0 1em;
+  &:after {
+    content: "";
+    display: block;
+    height: $footer-height;
+  }
+}
+footer {
+  background-color: $color-1;
+  height: $footer-height;
+  line-height: $footer-height;
+  text-align: center;
+}
+
+header {
+  background-color: $main-bg2;
+  margin: 0 -1em;
+  padding: 1em;
+  h1 {
+    padding-top: .67em;
+    margin-top: 0;
+    a {
+      text-decoration: none;
+      text-shadow: 1px 1px 1px black;
+    }
+  }
+}
+
+.main-nav {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    float: left;
+    li {
+      display: inline-block;
+    }
+  }
+  .logout-btn {
+    float: right;
+  }
+}
+
+.login-form {
+  input {
+    margin: 2em;
+  }
 }

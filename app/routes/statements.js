@@ -7,8 +7,12 @@ export default Ember.Route.extend({
   model: function() {
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.run.later(function() {
-        reject({ stack: "Oh No! Statements route is slow and it causes an error." });
+        reject("Some Random Error");
       }, 2000);
+    }).then(function(value) {
+      return "Success";
+    }, function(value) {
+      return "Error: " + value;
     });
   }
 });

@@ -1,7 +1,6 @@
 export default Ember.Route.extend({
   actions: {
     login: function() {
-      var LoginController = this.controllerFor('login');
       var LoginIndexController = this.controllerFor('login.index');
 
       // Save off and reset username and password so that they never stick around.
@@ -17,27 +16,22 @@ export default Ember.Route.extend({
       // Logging in, store the state of authentication.
       // TODO: Make authentication hit a server.
       if (true) {
-        LoginController.set('isAuthenticated', true);
+        this.set('session.isAuthenticated', true);
 
         // TODO: Redirect to the next step. Which is?
-
         this.replaceWith('one-time-password');
         return;
 
         // Figure out where to go.
-        var transition = LoginController.get('transition');
+        var transition = this.get('session.transition');
         if (transition) {
           // We already have a saved transition, use it.
-          LoginController.set('transition', undefined);
+          this.set('session.transition', undefined);
           transition.retry();
         } else {
           // We are going to direct the user to the default login page.
-          // "Slice" the login page out of the user's history since it redirects to the dashboard when authenticated.
-          var currentHandlerInfos = this.router.router.currentHandlerInfos;
-          var leafCurrentHandler = currentHandlerInfos.length ? currentHandlerInfos[currentHandlerInfos.length-1].name : undefined;
-
           // Use replaceState instead of pushState for requests coming from the full login route.
-          var method = (leafCurrentHandler.indexOf('login') === 0 ? "replaceWith" : "transitionTo");
+          var method = (this.router.isActive('login') ? "replaceWith" : "transitionTo");
           this[method]('accounts');
         }
       } else {

@@ -1,5 +1,10 @@
 export default Ember.Object.extend({
-  isIdentified: false,
   isAuthenticated: false,
-  isAuthorized: false
+  isAuthorized: false,
+
+  isNotAuthenticated: Ember.computed.not('isAuthenticated'),
+  isNotAuthorized: Ember.computed.not('isAuthorized'),
+
+  isPrivileged: Ember.computed.or('isAuthenticated', 'isAuthorized'),
+  isNotPrivileged: Ember.computed.not('isPrivileged')
 });

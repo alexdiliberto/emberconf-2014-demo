@@ -2,8 +2,6 @@ import analyticsObject from 'emberconf-2014-demo/utils/analyticsObject';
 import analyticsSendHandlers from 'emberconf-2014-demo/utils/analyticsSendHandlers';
 
 export default function analyticsHandler(actionName) {
-  debugger;
-
   /* Get router handle by scope (different: send versus action) */
   var target = this.target;
   var router = target ? target.router : this.router.router;

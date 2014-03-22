@@ -1,6 +1,7 @@
 export default Ember.Route.extend({
   model: function() {
-    return [{
+    return [
+      {
         id: 1,
         name: 'Checking',
         amount: 1000

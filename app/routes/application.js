@@ -40,6 +40,13 @@ export default Ember.Route.extend({
     },
     logout: function() {
       this.transitionTo('logout');
+    },
+    didTransition: function() {
+      Ember.run.once(this, function() {
+        debugger;
+        console.log("*** Analytics: " + this.router.get('url'));
+        //ga('send', 'pageview', router.get('url'));
+      });
     }
   }
 });

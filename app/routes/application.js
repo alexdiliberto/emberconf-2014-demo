@@ -1,5 +1,5 @@
-
 import analyticsSendHandlers from 'emberconf-2014-demo/utils/analyticsSendHandlers';
+import analyticsHandler from 'emberconf-2014-demo/utils/analyticsHandler';
 
 export default Ember.Route.extend({
   actions: {
@@ -43,6 +43,9 @@ export default Ember.Route.extend({
     },
     logout: function() {
       this.transitionTo('logout');
+    },
+    _trackAppEvent: function() {
+      analyticsHandler.apply(this, arguments);
     },
     didTransition: function() {
       Ember.run.once(this, function() {

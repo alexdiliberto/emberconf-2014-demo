@@ -7,7 +7,8 @@ export default Ember.Object.create({
 
   // Non route-based or global fallback actions
   _global: {
-    _trackPromise: function(route, status) { return { var3: route, var4: status }; } // You may set the processor to be a function and return a POJO.
+    _trackPromise: function(route, promiseStatus) { return { route: route, status: promiseStatus }; },
+    _trackExternalLink: function(url) { return { "external-url": url }; }
   },
 
   // Begin route-specific actions

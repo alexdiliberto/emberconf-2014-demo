@@ -15,10 +15,19 @@ export default Ember.Route.extend({
       transferDate = controller.get('todayDate');
 
     return new Ember.RSVP.Promise(function(resolve, reject) {
+      var model = this.modelFor('accounts'),
+        acct;
+
       controller.toggleProperty('loadingTransfer');
 
       Ember.run.later(this, function() {
         controller.toggleProperty('loadingTransfer');
+
+        acct = model.filter(function(account) { return account.id == transferFrom.id; })[0];
+        acct.decrementProperty('amount', parseFloat(transferAmount));
+        acct = model.filter(function(account) { return account.id == transferTo.id; })[0];
+        acct.incrementProperty('amount', parseFloat(transferAmount));
+
         resolve({ from: transferFrom.name, to: transferTo.name, amt: transferAmount, date: transferDate });
       }, 1000);
     }.bind(this));
@@ -57,13 +66,6 @@ export default Ember.Route.extend({
       } else if (this.controller.get('transferComplete')) {
         this._resetState();
       }
-    },
-    loading: function(transition, originRoute) {
-      debugger;
-      console.log('loading');
-      return true;
     }
   }
 });
-
-

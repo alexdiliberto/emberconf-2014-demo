@@ -16,11 +16,4 @@ export default Ember.Route.extend({
       this.replaceWith('login');
     }
   },
-  actions: {
-    loading: function(transition, originRoute) {
-      debugger;
-      console.log('loading');
-      return true;
-    }
-  }
 });

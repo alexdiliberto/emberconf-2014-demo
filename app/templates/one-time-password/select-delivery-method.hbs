@@ -1,13 +1,12 @@
 <h3>Select Delivery Method</h3>
 
 <form action="" method="post">
-
-{{#radiogroup name="register" value=deliveryMethodId}}
-  {{#each itemController="one-time-password/delivery-method"}}
-    <label {{bind-attr for=htmlid}}>{{radio id=htmlid value=id}} {{type}} - {{value}}</label>
-  {{/each}}
-{{/radiogroup}}
-
-<button {{action "selectDeliveryMethod"}}>Submit</button>
-
+  <ul class="plain-list">
+  {{#radiogroup name="register" value=deliveryMethodId}}
+    {{#each itemController="one-time-password/delivery-method"}}
+      <li><label {{bind-attr for=htmlid}}>{{radio id=htmlid value=id}} {{type}} - {{value}}</label></li>
+    {{/each}}
+  {{/radiogroup}}
+  </ul>
+  <button {{action "selectDeliveryMethod"}}>Submit</button>
 </form>

@@ -3,10 +3,11 @@
 <p>Would you like to register this device?</p>
 
 <form action="" method="post">
+  <ul class="plain-list">
   {{#radiogroup name="register" value=shouldRegister}}
-    <label for="register-yes">{{radio id="register-yes" value="true"}} Yes, this is a trusted device.</label>
-    <label for="register-no">{{radio id="register-no" value="false"}} No, this is a shared device.</label>
+    <li><label for="register-yes">{{radio id="register-yes" value="true"}} Yes, this is a trusted device.</label></li>
+    <li><label for="register-no">{{radio id="register-no" value="false"}} No, this is a shared device.</label></li>
   {{/radiogroup}}
-
+  </ul>
   <button {{action "registerDevice"}}>Submit</button>
 </form>

@@ -8,6 +8,7 @@ export default Ember.Object.create({
   // Non route-based or global fallback actions
   _global: {
     _trackPromise: function(route, promiseStatus) { return { route: route, status: promiseStatus }; },
+    _trackAbort: function(route, destination) { return { route: route, destination: destination }; },
     _trackExternalLink: function(url) { return { "external-url": url }; }
   },
 
@@ -37,13 +38,15 @@ export default Ember.Object.create({
       authenticate: { action: "authenticate" }
     },
     "register-device": {
-      registerDevice: function() { debugger; return { action: "register-device", "should-register-device": this.get('shouldRegisterBool') }; }
+      registerDevice: function() { return { action: "register-device", "should-register-device": this.get('shouldRegisterBool') }; }
     }
   },
-  products: {
-    product: {
-      vote: function(vote, color, product) { return { var3: vote, var4: color, var5: product }; },
-      otherStuff: { var3: "other-stuff" }
+  transfers: {
+    transferFunds: function() { return { action: "initiate-transfer-funds", from: this.get('selectedTransferFromAccount.name'), to: this.get('selectedTransferToAccount.name'), amount: this.get('transferAmount'), date: this.get('todayDate') }; }
+  },
+  accounts: {
+    details: {
+      vote: function(vote, color, product) { return { var3: vote, var4: color, var5: product }; }
     }
   }
 });

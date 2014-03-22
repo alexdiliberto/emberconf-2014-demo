@@ -110,6 +110,10 @@ header {
   }
 }
 
+.plain-list {
+  list-style-type: none;
+}
+
 .main-nav {
   background-color: #0464ad;
   margin: 0 -1em;
@@ -132,6 +136,19 @@ header {
   input {
     margin: 2em;
   }
+}
+
+.success,
+.error {
+  padding: 5px;
+}
+.success {
+  border: 2px solid green;
+  background-color: lightgreen;
+}
+.error {
+  border: 2px solid darkred;
+  background-color: red;
 }
 
 .recover-info {

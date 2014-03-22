@@ -15,5 +15,12 @@ export default Ember.Route.extend({
       // Drop the user at the front door.
       this.replaceWith('login');
     }
+  },
+  actions: {
+    loading: function(transition, originRoute) {
+      debugger;
+      console.log('loading');
+      return true;
+    }
   }
 });

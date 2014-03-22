@@ -9,6 +9,6 @@
 {{/if}}
 
 <form action="" method="post">
-  <label for="otp">One Time Password {{input type="text" name="otp" id="otp" value=otp}}</label>
+  <div><label for="otp">One Time Password {{input type="text" name="otp" id="otp" value=otp}}</label></div>
   <button {{action "authenticate"}}>Submit</button>
 </form>

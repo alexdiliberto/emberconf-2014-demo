@@ -12,7 +12,7 @@ Router.map(function() {
     this.resource('accounts', { path: '/' }, function() {
       this.route('details', { path : 'account/:account_id' });
     });
-    this.resource('transfers', function() {});
+    this.resource('transfers');
     this.resource('statements', function() {});
     this.route('tour');
   });

@@ -1,3 +1,49 @@
 <h2>Transfers</h2>
 
-{{outlet}}
+{{#if transferComplete}}
+  <p {{bind-attr class="transferCompleteSuccess:success:error"}}>{{transferCompleteMsg}}</p>
+{{else}}
+  <form action="" method="post" {{action "transferFunds" on="submit"}}>
+    <p>
+      <label for="transferFrom">Transfer From:&nbsp;
+        {{view Ember.Select
+               name="transferFrom"
+               id="transferFrom"
+               prompt="Select Account"
+               required=true
+               selection=selectedTransferFromAccount
+               content=model
+               optionValuePath="content.id"
+               optionLabelPath="content.name"}}
+      </label>
+    </p>
+    <p>
+      <label for="transferTo">Transfer To:&nbsp;
+        {{view Ember.Select
+               name="transferTo"
+               id="transferTo"
+               prompt="Select Account"
+               required=true
+               selection=selectedTransferToAccount
+               content=model
+               optionValuePath="content.id"
+               optionLabelPath="content.name"}}
+      </label>
+    </p>
+    {{#if hasSelectedBothAccountsAndNotComplete}}
+      <p>
+        <label for="transferAmount">Amount:&nbsp;
+          {{input value=transferAmount name="transferAmount" id="transferAmount"}}
+        </label>
+      </p>
+      <p>
+        <label for="transferDate">Date:&nbsp;
+          {{input value=todayDate name="transferDate" id="transferDate"}}
+        </label>
+      </p>
+      <div>
+        <button {{bind-attr disabled=loadingTransfer}}>Transfer Funds</button>
+      </div>
+    {{/if}}
+  </form>
+{{/if}}

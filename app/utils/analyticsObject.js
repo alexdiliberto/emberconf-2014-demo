@@ -19,10 +19,19 @@ export default Ember.Object.create({
   //       }
   //     }
   //
-  // ...If the action is not explictly listed, there will be no tracking
+  // If the given analytics handler is a function, I can either pass in named parameters or, even better,
+  // since I have access to the current route scope so I can grab any route-specific data for even more dynamic
+  // analytics tracking.
+  //
+  // Also if the action is not explictly listed, there will be no tracking
   //
   login: {
-    login: function(user) { return { var3: "login", var4: user }; }
+    login: function() { return { var3: "login", username: this.get('username') }; }
+  },
+  "one-time-password": {
+    "select-delivery-method": {
+      selectDeliveryMethod: function() { return { var3: "select-delivery-method", deliveryMethodId: this.get('deliveryMethodId') }; }
+    }
   },
   products: {
     product: {

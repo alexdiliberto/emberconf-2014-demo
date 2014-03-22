@@ -5,8 +5,9 @@ export default Ember.Route.extend({
       // If the user has done anything at all in a privileged area blow it away.
       if (this.get('session.isPrivileged')) {
         // FIXME: How would I do this without using the global namespace?
-        Emberconf2014Demo.reset();
+        return Emberconf2014Demo.reset();
       }
+      return true;
     }
   }
 });

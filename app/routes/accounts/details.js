@@ -16,6 +16,7 @@ export default Ember.Route.extend({
       if(!this.currentModel) {
         this.transitionTo('accounts');
       }
+      return true;
     },
     cycleAccounts: function(curAccountId) {
       var model = this.modelFor('accounts');

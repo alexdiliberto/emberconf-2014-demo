@@ -1,3 +1,6 @@
+
+import analyticsSendHandlers from 'emberconf-2014-demo/utils/analyticsSendHandlers';
+
 export default Ember.Route.extend({
   actions: {
     login: function() {
@@ -43,8 +46,7 @@ export default Ember.Route.extend({
     },
     didTransition: function() {
       Ember.run.once(this, function() {
-        console.log("*** Analytics: " + this.router.get('url'));
-        //ga('send', 'pageview', router.get('url'));
+        analyticsSendHandlers.route(this.router.get('url'));
       });
     }
   }

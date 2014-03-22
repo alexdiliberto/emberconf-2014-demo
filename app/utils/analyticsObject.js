@@ -2,8 +2,8 @@
  Analytics object definition - This holds all analytics specific data
 */
 export default Ember.Object.create({
-  // Default information to be passed on every request
-  _: { var1: true, var2: false },
+  // Default data to be passed on every request
+  _: { site: "My Online Bank" },
 
   // Non route-based or global fallback actions
   _global: {
@@ -27,17 +27,23 @@ export default Ember.Object.create({
   // Also if the action is not explictly listed, there will be no tracking
   //
   login: {
-    login: function() { return { var3: "login", username: this.get('username') }; }
+    login: function() { return { action: "login", username: this.get('username') }; }
   },
   "one-time-password": {
     "select-delivery-method": {
-      selectDeliveryMethod: function() { return { var3: "select-delivery-method", deliveryMethodId: this.get('deliveryMethodId') }; }
+      selectDeliveryMethod: function() { return { action: "select-delivery-method", deliveryMethodId: this.get('deliveryMethodId') }; }
+    },
+    authenticate: {
+      authenticate: { action: "authenticate" }
+    },
+    "register-device": {
+      registerDevice: function() { debugger; return { action: "register-device", "should-register-device": this.get('shouldRegisterBool') }; }
     }
   },
   products: {
     product: {
       vote: function(vote, color, product) { return { var3: vote, var4: color, var5: product }; },
-      otherStuff: { var3: 'other-stuff' }
+      otherStuff: { var3: "other-stuff" }
     }
   }
 });

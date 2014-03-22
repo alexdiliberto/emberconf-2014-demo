@@ -74,6 +74,11 @@ button {
   border: 1px solid black;
 }
 
+label,
+.ember-radio-button {
+  cursor: pointer;
+}
+
 .page-wrap {
   min-height: 100%;
   margin-bottom: -$footer-height;

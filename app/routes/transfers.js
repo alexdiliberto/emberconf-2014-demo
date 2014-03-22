@@ -29,7 +29,7 @@ export default Ember.Route.extend({
         acct.incrementProperty('amount', parseFloat(transferAmount));
 
         resolve({ from: transferFrom.name, to: transferTo.name, amt: transferAmount, date: transferDate });
-      }, 1000);
+      }, 2000);
     }.bind(this));
   },
   _resetState: function() {

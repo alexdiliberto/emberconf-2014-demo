@@ -3,6 +3,9 @@
 {{#if transferComplete}}
   <p {{bind-attr class="transferCompleteSuccess:success:error"}}>{{transferCompleteMsg}}</p>
 {{else}}
+  {{#if loadingTransfer}}
+    <b class="transferring-funds">Transferring Funds...</b>
+  {{/if}}
   <form action="" method="post" {{action "transferFunds" on="submit"}}>
     <p>
       <label for="transferFrom">Transfer From:&nbsp;

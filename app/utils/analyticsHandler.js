@@ -14,8 +14,8 @@ export default function analyticsHandler(actionName) {
   var activeLeafMostRoute = curHandlerInfos[curHandlerInfos.length - 1].name;
 
   /**
-   Fetch the correct analytics route handler object from the lookup table based on the following in order:
-    1. If currently transition to route, get that route's handler
+   Fetch the correct analytics route handler object from the lookup table based on the following, in order:
+    1. If currently transitioning to a route, get that new route's handler
     2. Otherwise, get the active leaf-most route handler
     3. If either of those do not resolve, look in _global
     4. Finally, if none resolve, then there will be no tracking

@@ -1,5 +1,9 @@
 export default Ember.Route.extend({
   beforeModel: function() {
-    this.replaceWith('one-time-password.setup');
+    if (this.get('session.willSetupOTP')) {
+      this.replaceWith('one-time-password.setup');
+    } else {
+      this.replaceWith('one-time-password.select-delivery-method');
+    }
   }
 })

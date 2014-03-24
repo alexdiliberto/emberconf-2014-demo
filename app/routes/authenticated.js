@@ -5,8 +5,8 @@ export default Ember.Route.extend({
 
       // Start their login process over.
       this.get('session').setProperties({
-        isAuthenticated: false,
-        isAuthorized: false
+        isIdentified: false,
+        isAuthenticated: false
       });
 
       // Capture where the user was going for later.

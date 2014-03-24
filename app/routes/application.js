@@ -16,30 +16,25 @@ export default Ember.Route.extend({
         password: ""
       });
 
-      // Logging in, store the state of authentication.
-      // TODO: Make authentication hit a server.
-      if (true) {
-        this.set('session.isAuthenticated', true);
+      ic.ajax.raw('/session').then(function(result) {
+        this.get('session').setProperties(result.response);
 
-        // TODO: Redirect to the next step. Which is?
-        this.replaceWith('one-time-password');
-        return;
-
-        // Figure out where to go.
-        var transition = this.get('session.transition');
-        if (transition) {
-          // We already have a saved transition, use it.
-          this.set('session.transition', undefined);
-          transition.retry();
-        } else {
-          // We are going to direct the user to the default login page.
-          // Use replaceState instead of pushState for requests coming from the full login route.
-          var method = (this.router.isActive('login') ? "replaceWith" : "transitionTo");
-          this[method]('accounts');
+        if (this.get('session.isAuthorized')) {
+          if (this.get('session.showTour')) {
+            this.replaceWith('authenticated.tour');
+          } else {
+            this.replaceWith('accounts');
+          }
+        } else if (this.get('session.isAuthenticated') && this.get('session.willNotSetupOTP')) {
+          this.replaceWith('login.electronic-consent');
+        } else if (this.get('session.isIdentified') || this.get('session.willSetupOTP')) {
+          this.replaceWith('one-time-password');
+        } else if (this.get('session.error')) {
+          var error = this.get('session.error');
+          this.set('session.error', undefined);
+          LoginIndexController.set("error", this.get('session.error'));
         }
-      } else {
-        LoginIndexController.set("error", "There was an error.");
-      }
+      }.bind(this));
     },
     logout: function() {
       this.transitionTo('logout');

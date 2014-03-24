@@ -1,16 +1,20 @@
 export default Ember.Route.extend({
   beforeModel: function() {
     if (this.get('session.isAuthorized')) {
-      // We know who the user is and they're all set up so send them on their merry way.
-      this.replaceWith('accounts');
-    } else if (this.get('session.isNotAuthenticated')) {
-      // The user is attempting to visit a place that they don't have permission to be.
-      // You may only visit login.index if you aren't authenticated.
+      var transition = this.get('session.transition');
+      if (transition) {
+        // We already have a saved transition, use it.
+        this.set('session.transition', undefined);
+        transition.retry();
+      } else {
+        this.replaceWith('accounts');
+      }
 
+    } else {
       // Start their login process over.
       this.get('session').setProperties({
-        isAuthenticated: false,
-        isAuthorized: false
+        isIdentified: false,
+        isAuthenticated: false
       });
 
       // Drop the user at the front door.

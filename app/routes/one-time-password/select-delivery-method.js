@@ -1,15 +1,15 @@
 export default Ember.Route.extend({
-  beforeModel: function() {
-    var model = this.modelFor('one-time-password');
-    if (model.length === 1) {
-      // TODO: Trigger send.
-      this.replaceWith('one-time-password.authenticate');
-    } else if (model.length === 0) {
-      this.replaceWith('one-time-password.setup');
-    }
-  },
   model: function() {
     return this.modelFor('one-time-password');
+  },
+  afterModel: function(model, transition) {
+    if (model.length === 0) {
+      // TODO: Provide user feedback.
+      this.replaceWith('contact');
+    } else if (model.length === 1) {
+      // TODO: Trigger send to server.
+      this.replaceWith('one-time-password.authenticate');
+    }
   },
 
   actions: {

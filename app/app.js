@@ -2,6 +2,41 @@ import Resolver from 'ember/resolver';
 import session from 'emberconf-2014-demo/controllers/session';
 import analyticsHandler from 'emberconf-2014-demo/utils/analyticsHandler';
 
+ic.ajax.defineFixture('/session', {
+  response: {
+    /* Successfully identified username and password. */
+    isIdentified: true,
+
+    /* Related to one-time-passcode. */
+    willSetupOTP: false,
+    isAuthenticated: false,
+
+    hasElectronicConsent: true,
+    hasTermsOfServiceConsent: false,
+    showTour: false
+  },
+  textStatus: 'success'
+});
+
+ic.ajax.defineFixture('/one-time-password-methods', {
+  // response: [
+  //   { id: 1, type: 'phone', value: '5555555555' },
+  //   { id: 2, type: 'email', value: 'example@example.com' }
+  // ],
+  response: [
+   { id: 1, type: 'phone', value: '5555555555' }
+  ],
+  // response: [],
+  textStatus: 'success'
+});
+
+ic.ajax.defineFixture('/one-time-password-authenticate', {
+  response: {
+    isAuthenticated: true
+  },
+  textStatus: 'success'
+});
+
 Ember.Application.initializer({
   name: 'session',
   initialize: function(container, app) {

@@ -3,8 +3,8 @@
 {{#if hasNoMethods}}
   No methods set up.
 {{else}}
-  {{#each}}
-    {{type}} - {{value}} <button {{action "remove" this}}>Remove</button>
+  {{#each itemController="one-time-password/delivery-method"}}
+    {{type}} - {{formattedValue}} <button {{action "remove" this}}>Remove</button>
   {{/each}}
 {{/if}}
 

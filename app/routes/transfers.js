@@ -22,11 +22,16 @@ export default Ember.Route.extend({
 
       Ember.run.later(this, function() {
         controller.toggleProperty('loadingTransfer');
+        transferAmount = accounting.parse(transferAmount);
 
         acct = model.filter(function(account) { return account.id == transferFrom.id; })[0];
-        acct.decrementProperty('amount', parseFloat(transferAmount));
+        // if(transferAmount > acct.amount) {
+        //   controller.set('transferCompleteMsg', accounting.formatMoney(transferAmount)+' exceeds your '+accounting.formatMoney(acct.amount)+' '+acct.name+' account balance.');
+        //   reject( { msg: controller.get('transferCompleteMsg') } );
+        // }
+        acct.decrementProperty('amount', transferAmount);
         acct = model.filter(function(account) { return account.id == transferTo.id; })[0];
-        acct.incrementProperty('amount', parseFloat(transferAmount));
+        acct.incrementProperty('amount', transferAmount);
 
         resolve({ from: transferFrom.name, to: transferTo.name, amt: transferAmount, date: transferDate });
       }, 2000);
@@ -52,6 +57,8 @@ export default Ember.Route.extend({
           transferComplete: true,
           transferCompleteSuccess: true,
           transferCompleteMsg: "Success! Your $"+transfer.amt+" transfer from "+transfer.from+" to "+transfer.to+" on "+transfer.date+" is complete."
+        }, function(error) {
+          console.log("error rejected: " + error);
         });
       }.bind(this));
     },

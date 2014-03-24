@@ -72,7 +72,9 @@ module.exports = function (broccoli) {
       'ember-data.js',
       'ember-resolver.js',
       'radio-button.js',
-      'libphonenumber.js'
+      'libphonenumber.js',
+      'accounting.js',
+      'lodash.js'
     ],
 
     wrapInEval: env !== 'production',

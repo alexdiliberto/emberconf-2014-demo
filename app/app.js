@@ -23,10 +23,10 @@ ic.ajax.defineFixture('/one-time-password-methods', {
   //   { id: 1, type: 'phone', value: '5555555555' },
   //   { id: 2, type: 'email', value: 'example@example.com' }
   // ],
-  // response: [
-  //  { id: 1, type: 'phone', value: '5555555555' }
-  // ],
-  response: [],
+  response: [
+   { id: 1, type: 'phone', value: '5555555555' }
+  ],
+  // response: [],
   textStatus: 'success'
 });
 

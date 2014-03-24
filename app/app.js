@@ -8,12 +8,12 @@ ic.ajax.defineFixture('/session', {
     isIdentified: true,
 
     /* Related to one-time-passcode. */
-    willSetupOTP: true,
-    isAuthenticated: true,
+    willSetupOTP: false,
+    isAuthenticated: false,
 
-    hasElectronicConsent: false,
+    hasElectronicConsent: true,
     hasTermsOfServiceConsent: false,
-    showTour: true
+    showTour: false
   },
   textStatus: 'success'
 });

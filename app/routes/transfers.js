@@ -36,7 +36,7 @@ export default Ember.Route.extend({
     this.controller.setProperties({
       selectedTransferFromAccount: undefined,
       selectedTransferToAccount: undefined,
-      transferAmount: undefined,
+      transferAmount: 0,
       transferComplete: false,
       transferCompleteSuccess: undefined,
       transferCompleteMsg: undefined

@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.run.later(this, function() {
         this.send('_trackAppEvent', '_trackPromise', 'statements#model', 'reject');
-        reject("Some Random Error");
+        reject("Application Error...");
       }, 2000);
     }.bind(this)).then(function(value) {
       return "Success";

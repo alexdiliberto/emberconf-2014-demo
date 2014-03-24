@@ -25,8 +25,6 @@ html, body {
 
 .ember-application > .ember-view {
   height: 100%;
-  -webkit-box-shadow: 0px 0px 20px -1px;
-  box-shadow: 0px 0px 20px -1px;
 }
 
 body {
@@ -77,6 +75,8 @@ label,
   min-height: 100%;
   margin-bottom: -$footer-height;
   padding: 0 1em;
+  -webkit-box-shadow: 0px 0px 20px -1px;
+  box-shadow: 0px 0px 20px -1px;
   &:after {
     content: "";
     display: block;
@@ -114,15 +114,32 @@ header {
 }
 
 .main-nav {
-  background-color: #0464ad;
+  background-color: $color-2;
   margin: 0 -1em;
-  padding: 0 1em;
+  padding: 0 1em 0 0;
   ul {
     list-style-type: none;
+    width: 50%;
+    height: 100%;
+    margin: 0;
     padding-left: 0;
     float: left;
     li {
-      display: inline-block;
+      float: left;
+      height: 3em;
+      line-height: 3;
+      a {
+        display: block;
+        width: 7em;
+        text-align: center;
+        -moz-transition: .5s;
+        -webkit-transition: .5s;
+        transition: .5s;
+        &:hover,
+        &:focus {
+          background-color: darken($color-2, 10%);
+        }
+      }
     }
   }
   .logout-btn {

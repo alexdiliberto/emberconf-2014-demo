@@ -1,7 +1,7 @@
 export default Ember.ArrayController.extend({
   selectedTransferFromAccount: undefined,
   selectedTransferToAccount: undefined,
-  transferAmount: undefined,
+  transferAmount: 0,
   hasSelectedBothAccounts: Ember.computed.and('selectedTransferFromAccount', 'selectedTransferToAccount'),
   hasSelectedBothAccountsAndNotComplete: Ember.computed.and('hasSelectedBothAccounts', 'transferNotComplete'),
   transferComplete: false,

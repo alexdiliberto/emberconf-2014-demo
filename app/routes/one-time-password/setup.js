@@ -1,8 +1,7 @@
 export default Ember.Route.extend({
   beforeModel: function() {
-    var model = this.modelFor('one-time-password');
-    if (model.length > 0) {
-      this.replaceWith('one-time-password.select-delivery-method');
+    if (!this.get('session.willSetupOTP')) {
+      this.replaceWith('one-time-password');
     }
   },
   model: function() {
@@ -34,6 +33,7 @@ export default Ember.Route.extend({
     },
     commit: function() {
       // TODO: Send the OTP to the server.
+      this.set('session.willSetupOTP', false);
       this.replaceWith('one-time-password.register-device');
     }
   }

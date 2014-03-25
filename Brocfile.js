@@ -74,7 +74,7 @@ module.exports = function (broccoli) {
       'radio-button.js',
       'libphonenumber.js',
       'accounting.js',
-      'lodash.js'
+      'lodash/dist/lodash.min.js'
     ],
 
     wrapInEval: env !== 'production',

@@ -8,10 +8,10 @@ A demo app for two EmberConf 2014 presentations:
 
 ## Notes
 
-IMPORTANT: This application is currently incomplete. In order to navigate around it you must directly manipulate the URL or even the underlying code. Just a note in case you're taking @nathanhammond up on the beer-or-coffee-for-code-review exchange. :)
+This application is in a mostly functional state as a demo. Any individual commit may break it, but issues are typically quickly patched.
 
 ```bash
-npm install -g bower ember-cli@0.0.16
+npm install -g bower ember-cli@0.0.18
 ```
 
 - After checkout `bower install && npm install` to populate the vendor folder. Alternatively, `ember init` does the same thing in a less verbose manner.

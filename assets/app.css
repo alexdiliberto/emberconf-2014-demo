@@ -1,0 +1,170 @@
+/* Put your CSS here */
+/* 960px */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  background-color: #b2b2b2; }
+
+html, body {
+  height: 100%; }
+
+.ember-application > .ember-view {
+  height: 100%; }
+
+body {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  max-width: 60em;
+  margin: 0 auto;
+  background-color: #a5a5a5; }
+
+.cf:before, .cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.cf:after {
+  clear: both; }
+
+a {
+  color: white; }
+
+button {
+  padding: 0.5em 1em;
+  margin: 0;
+  line-height: 1.5;
+  border: 1px solid black;
+  background-color: white;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+  button:hover {
+    cursor: pointer; }
+
+.ember-text-field {
+  padding: 1em;
+  border: 1px solid black; }
+
+label, .ember-radio-button {
+  cursor: pointer; }
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -100px;
+  padding: 0 1em;
+  -webkit-box-shadow: 0px 0px 20px -1px;
+  box-shadow: 0px 0px 20px -1px; }
+  .page-wrap:after {
+    content: "";
+    display: block;
+    height: 100px; }
+
+footer {
+  background-color: #0381e0;
+  height: 100px;
+  line-height: 100px;
+  text-align: center; }
+
+header {
+  background-color: #8b8b8b;
+  margin: 0 -1em;
+  padding: 1em; }
+  header h1 {
+    padding-top: 0.67em;
+    margin-top: 0; }
+    header h1 a {
+      text-decoration: none;
+      text-shadow: 1px 1px 1px black; }
+
+.plain-list {
+  list-style-type: none; }
+
+.transferring-funds {
+  float: right;
+  padding-right: 20%; }
+
+.main-nav {
+  background-color: #0464ad;
+  margin: 0 -1em;
+  padding: 0 1em 0 0; }
+  .main-nav ul {
+    list-style-type: none;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding-left: 0;
+    float: left; }
+    .main-nav ul li {
+      float: left;
+      height: 3em;
+      line-height: 3; }
+      .main-nav ul li a {
+        display: block;
+        width: 7em;
+        text-align: center;
+        -moz-transition: 0.5s;
+        -webkit-transition: 0.5s;
+        transition: 0.5s; }
+        .main-nav ul li a:hover, .main-nav ul li a:focus {
+          background-color: #03497b; }
+  .main-nav .logout-btn {
+    float: right;
+    margin-top: 1em; }
+
+.login-form input {
+  margin: 2em; }
+
+.success, .error {
+  padding: 5px; }
+
+.success {
+  border: 2px solid green;
+  background-color: lightgreen; }
+
+.error {
+  border: 2px solid darkred;
+  background-color: red; }
+
+.recover-info {
+  border-top: 1px solid #8b8b8b;
+  list-style-type: none;
+  padding: 1em;
+  margin: 0; }
+  .recover-info li {
+    padding-bottom: 1em; }
+
+.accounts, .accounts-details {
+  display: inline-block; }
+
+.accounts-details {
+  margin-left: 5em; }
+
+.accounts-ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  border: 1px solid black;
+  display: inline-block; }
+  .accounts-ul li a {
+    padding: 1em 2em;
+    display: block;
+    -webkit-transition: 0.25s;
+    transition: 0.25s; }
+    .accounts-ul li a:hover, .accounts-ul li a:focus {
+      background-color: #8b8b8b; }
+    .accounts-ul li a.active {
+      background-color: #989898; }
+
+.total-amt-text {
+  font-size: 2em; }
+
+.flex-continer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start; }
+
+.met {
+  color: green; }

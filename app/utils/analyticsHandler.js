@@ -6,6 +6,11 @@ export default function analyticsHandler(actionName) {
   var target = this.target;
   var router = target ? target.router : this.router.router;
 
+  if (!router) {
+    this._super.apply(this, arguments);
+    return;
+  }
+
   /* If there is a currently active transition, grab the target name */
   var activeTransition = router.activeTransition && router.activeTransition.targetName;
 

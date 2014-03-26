@@ -19,13 +19,13 @@ ic.ajax.defineFixture('/session', {
 });
 
 ic.ajax.defineFixture('/one-time-password-methods', {
-  // response: [
-  //   { id: 1, type: 'phone', value: '5555555555' },
-  //   { id: 2, type: 'email', value: 'example@example.com' }
-  // ],
   response: [
-   { id: 1, type: 'phone', value: '5555555555' }
+    { id: 1, type: 'phone', value: '5555555555' },
+    { id: 2, type: 'email', value: 'example@example.com' }
   ],
+  // response: [
+  //  { id: 1, type: 'phone', value: '5555555555' }
+  // ],
   // response: [],
   textStatus: 'success'
 });

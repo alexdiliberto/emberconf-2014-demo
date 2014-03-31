@@ -11,6 +11,7 @@
     "ic-ajax": "~0.3.0",
     "ember-testing-httpRespond": "~0.1.2",
     "lodash": "~2.4.1",
-    "accounting": "~0.3.2"
+    "accounting": "~0.3.2",
+    "normalize-css": "^3.0.1"
   }
 }

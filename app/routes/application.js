@@ -1,5 +1,6 @@
 import analyticsSendHandlers from 'emberconf-2014-demo/utils/analyticsSendHandlers';
 import analyticsHandler from 'emberconf-2014-demo/utils/analyticsHandler';
+import ajax from 'emberconf-2014-demo/utils/ic-ajax-fixtures';
 
 export default Ember.Route.extend({
   actions: {
@@ -16,7 +17,7 @@ export default Ember.Route.extend({
         password: ""
       });
 
-      ic.ajax.raw('/session').then(function(result) {
+      ajax.raw('/session').then(function(result) {
         this.get('session').setProperties(result.response);
 
         if (this.get('session.isAuthorized')) {

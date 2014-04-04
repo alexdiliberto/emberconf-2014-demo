@@ -1,4 +1,14 @@
-ic.ajax.defineFixture('/session', {
+import { __fixtures__, defineFixture, lookupFixture, raw, request } from 'ic-ajax';
+
+var ajax = {
+   __fixtures__: __fixtures__,
+   defineFixture: defineFixture,
+   lookupFixture: lookupFixture,
+   raw: raw,
+   request: request
+};
+
+ajax.defineFixture('/session', {
   response: {
     /* Successfully identified username and password. */
     isIdentified: true,
@@ -14,7 +24,7 @@ ic.ajax.defineFixture('/session', {
   textStatus: 'success'
 });
 
-ic.ajax.defineFixture('/one-time-password-methods', {
+ajax.defineFixture('/one-time-password-methods', {
   response: [
     { id: 1, type: 'phone', value: '5555555555' },
     { id: 2, type: 'email', value: 'example@example.com' }
@@ -26,9 +36,11 @@ ic.ajax.defineFixture('/one-time-password-methods', {
   textStatus: 'success'
 });
 
-ic.ajax.defineFixture('/one-time-password-authenticate', {
+ajax.defineFixture('/one-time-password-authenticate', {
   response: {
     isAuthenticated: true
   },
   textStatus: 'success'
 });
+
+export default ajax;

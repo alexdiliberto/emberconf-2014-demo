@@ -1,3 +1,5 @@
+import ajax from 'emberconf-2014-demo/utils/ic-ajax-fixtures';
+
 export default Ember.Route.extend({
   beforeModel: function(transition) {
     if (this.get('session.isNotIdentified')) {
@@ -14,7 +16,7 @@ export default Ember.Route.extend({
     }
   },
   model: function() {
-    return ic.ajax.raw('/one-time-password-methods').then(function(result) {
+    return ajax.raw('/one-time-password-methods').then(function(result) {
       return result.response;
     })
   }

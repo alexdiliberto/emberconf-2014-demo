@@ -2,40 +2,42 @@ import Resolver from 'ember/resolver';
 import session from 'emberconf-2014-demo/controllers/session';
 import analyticsHandler from 'emberconf-2014-demo/utils/analyticsHandler';
 
-ic.ajax.defineFixture('/session', {
-  response: {
-    /* Successfully identified username and password. */
-    isIdentified: true,
+Ember.MODEL_FACTORY_INJECTIONS = true;
 
-    /* Related to one-time-passcode. */
-    willSetupOTP: false,
-    isAuthenticated: false,
+// ic.ajax.defineFixture('/session', {
+//   response: {
+//     /* Successfully identified username and password. */
+//     isIdentified: true,
 
-    hasElectronicConsent: true,
-    hasTermsOfServiceConsent: false,
-    showTour: false
-  },
-  textStatus: 'success'
-});
+//     /* Related to one-time-passcode. */
+//     willSetupOTP: false,
+//     isAuthenticated: false,
 
-ic.ajax.defineFixture('/one-time-password-methods', {
-  response: [
-    { id: 1, type: 'phone', value: '5555555555' },
-    { id: 2, type: 'email', value: 'example@example.com' }
-  ],
-  // response: [
-  //  { id: 1, type: 'phone', value: '5555555555' }
-  // ],
-  // response: [],
-  textStatus: 'success'
-});
+//     hasElectronicConsent: true,
+//     hasTermsOfServiceConsent: false,
+//     showTour: false
+//   },
+//   textStatus: 'success'
+// });
 
-ic.ajax.defineFixture('/one-time-password-authenticate', {
-  response: {
-    isAuthenticated: true
-  },
-  textStatus: 'success'
-});
+// ic.ajax.defineFixture('/one-time-password-methods', {
+//   response: [
+//     { id: 1, type: 'phone', value: '5555555555' },
+//     { id: 2, type: 'email', value: 'example@example.com' }
+//   ],
+//   // response: [
+//   //  { id: 1, type: 'phone', value: '5555555555' }
+//   // ],
+//   // response: [],
+//   textStatus: 'success'
+// });
+
+// ic.ajax.defineFixture('/one-time-password-authenticate', {
+//   response: {
+//     isAuthenticated: true
+//   },
+//   textStatus: 'success'
+// });
 
 Ember.Application.initializer({
   name: 'session',
@@ -46,13 +48,13 @@ Ember.Application.initializer({
 });
 
 var App = Ember.Application.extend({
-  // LOG_ACTIVE_GENERATION: true,
-  // LOG_MODULE_RESOLVER: true,
+  LOG_ACTIVE_GENERATION: true,
+  LOG_MODULE_RESOLVER: true,
   // LOG_TRANSITIONS: true,
   // LOG_TRANSITIONS_INTERNAL: true,
-  // LOG_VIEW_LOOKUPS: true,
+  LOG_VIEW_LOOKUPS: true,
   modulePrefix: 'emberconf-2014-demo', // TODO: loaded via config
-  Resolver: Resolver['default']
+  Resolver: Resolver
 });
 
 /* Reopen ActionHandler and perform processing on the send() function */

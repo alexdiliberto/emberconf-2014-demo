@@ -1,47 +1,21 @@
-# Project ignores
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
 /dist
-/vendor/*/
 /tmp
 
-# Always-ignore extensions
-*.diff
-*.err
-*.orig
-*.log
-*.rej
-*.swo
-*.swp
-*.vi
-*~
-*.sass-cache
+# dependencies
+/node_modules
+/vendor/*
+!/vendor/ember-shim.js
+!/vendor/qunit-shim.js
+!/vendor/_loader.js
 
-# Always-ignore directories
-doc/
-backups/
-demo/
-node_modules/
-bower_components/
-
-# OS or Editor folders
+# misc
+/.sass-cache
+/connect.lock
+/libpeerconnection.log
 .DS_Store
-.cache
-.project
-.settings
-.tmproj
-*.esproj
-nbproject
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows image file caches
 Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# SublimeText project files
-/*.sublime-project
-*.sublime-workspace
-sftp-config*.json
+/coverage/*
+npm-debug.log

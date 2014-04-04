@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Emberconf2014Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+      ENV = {{ENV}};
+      document.write('<base href="' + document.location.origin + ENV.rootURL + '" />');
+    </script>
+
+    <link rel="stylesheet" href="assets/app.css">
+    <script src="assets/app.js"></script>
+  </head>
+  <body>
+    <script>
+      window.Emberconf2014Demo = require('emberconf-2014-demo/main')['default']('emberconf-2014-demo');
+    </script>
+  </body>
+</html>

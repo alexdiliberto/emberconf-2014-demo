@@ -1,5 +1,4 @@
-import Application from 'emberconf-2014-demo/app';
-import Router from 'emberconf-2014-demo/router';
+var Router = require('emberconf-2014-demo/router')['default'];
 
 function startApp(attrs) {
   var App;
@@ -16,7 +15,7 @@ function startApp(attrs) {
   });
 
   Ember.run(function(){
-    App = Application.create(attributes);
+    App = require('emberconf-2014-demo/main')['default']('emberconf-2014-demo', attributes);
     App.setupForTesting();
     App.injectTestHelpers();
   });

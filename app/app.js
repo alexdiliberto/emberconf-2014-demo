@@ -1,5 +1,5 @@
 import Resolver from 'ember/resolver';
-import session from 'emberconf-2014-demo/controllers/session';
+import session from 'emberconf-2014-demo/utils/session';
 import analyticsHandler from 'emberconf-2014-demo/utils/analyticsHandler';
 
 Ember.MODEL_FACTORY_INJECTIONS = true;

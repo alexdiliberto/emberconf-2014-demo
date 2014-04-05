@@ -19,3 +19,5 @@
 Thumbs.db
 /coverage/*
 npm-debug.log
+*.sublime-project
+*.sublime-workspace

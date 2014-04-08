@@ -40,6 +40,11 @@ export default Ember.Route.extend({
     logout: function() {
       this.transitionTo('logout');
     },
+    /**
+     This is needed as a global handler for any '_track' simple actions. Since a '_track' action is
+     not route-based, we need a handler on the application route to which all other actions can bubble
+     up to. This `_trackAppEvent` handler will fire our normal action handling sequence.
+    */
     _trackAppEvent: function() {
       analyticsHandler.apply(this, arguments);
     },

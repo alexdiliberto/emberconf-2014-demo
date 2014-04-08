@@ -11,7 +11,12 @@ A demo app for two EmberConf 2014 presentations:
 This application is in a mostly functional state as a demo. Any individual commit may break it, but issues are typically quickly patched.
 
 ```bash
-npm install -g bower ember-cli@0.0.21
+npm install -g bower ember-cli@0.0.22
 ```
 
-- After checkout `bower install && npm install` to populate the vendor folder. Alternatively, `ember init` does the same thing in a less verbose manner.
+- After checkout `bower install && npm install` to populate the vendor folder.
+- Then manually deal with a few issues:
+  - https://github.com/joliss/broccoli-sass/pull/8
+  - https://github.com/joliss/broccoli-kitchen-sink-helpers/issues/3
+  - https://github.com/joliss/broccoli/pull/91
+  - Manually remove the `readme.md` file from `vendor/accounting`

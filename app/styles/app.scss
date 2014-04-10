@@ -1,10 +1,4 @@
-/*
-Deleting normalize dependency to temporarily resolve error
-
-Error: /Applications/MAMP/htdocs/emberconf-2014-demo/tmp/template_filter-tmp_dest_dir-4MauhBLC.tmp/emberconf-2014-demo/styles/app.scss:6: error: file to import not found or unreadable: 'normalize'
- [string exception]
-*/
-/*@import 'normalize';*/
+@import 'normalize';
 
 /* Put your CSS here */
 $footer-height: 100px;

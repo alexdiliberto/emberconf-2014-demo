@@ -9,7 +9,7 @@
 
     <script>
       window.ENV = {{ENV}};
-      document.write('<base href="' + document.location.origin + ENV.rootURL + '" />');
+      document.write('<base href="' + ENV.rootURL + '" />');
     </script>
 
     <link rel="stylesheet" href="assets/app.css">
@@ -17,7 +17,7 @@
   </head>
   <body>
     <script>
-      window.Emberconf2014Demo = require('emberconf-2014-demo/main')['default']('emberconf-2014-demo');
+      window.Emberconf2014Demo = require('emberconf-2014-demo/app')['default'].create();
     </script>
   </body>
 </html>

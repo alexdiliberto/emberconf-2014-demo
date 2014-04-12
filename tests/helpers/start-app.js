@@ -1,3 +1,4 @@
+var Application = require('emberconf-2014-demo/app')['default'];
 var Router = require('emberconf-2014-demo/router')['default'];
 
 function startApp(attrs) {
@@ -15,7 +16,7 @@ function startApp(attrs) {
   });
 
   Ember.run(function(){
-    App = require('emberconf-2014-demo/main')['default']('emberconf-2014-demo', attributes);
+    App = Application.create(attributes);
     App.setupForTesting();
     App.injectTestHelpers();
   });

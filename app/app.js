@@ -1,16 +1,7 @@
 import Resolver from 'ember/resolver';
-import session from 'emberconf-2014-demo/utils/session';
-import analyticsHandler from 'emberconf-2014-demo/utils/analyticsHandler';
+import loadInitializers from 'ember/load-initializers';
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
-
-Ember.Application.initializer({
-  name: 'session',
-  initialize: function(container, app) {
-    container.register('session:main', session);
-    app.inject('route', 'session', 'session:main');
-  }
-});
 
 var App = Ember.Application.extend({
   LOG_ACTIVE_GENERATION: true,
@@ -22,11 +13,6 @@ var App = Ember.Application.extend({
   Resolver: Resolver
 });
 
-/* Reopen ActionHandler and perform processing on the send() function */
-Ember.ActionHandler.reopen({
-  send: function(actionName) {
-    analyticsHandler.apply(this, arguments);
-  }
-});
+loadInitializers(App, 'emberconf-2014-demo');
 
 export default App;

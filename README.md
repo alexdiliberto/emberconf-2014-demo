@@ -11,15 +11,27 @@ A demo app for two EmberConf 2014 presentations:
 This application is in a mostly functional state as a demo. Any individual commit may break it, but issues are typically quickly patched.
 
 ```bash
-npm install -g bower ember-cli@0.0.22
+npm install -g bower
+git clone https://github.com/stefanpenner/ember-cli
+cd ember-cli
+git checkout 0c9720a704fcfb18b919aaa43861a27cd62ce065
+
+# This is the version of ember-cli you'll need to use until these changes are published.
+./bin/ember server
 ```
 
 - After checkout `bower install && npm install` to populate the vendor folder.
-- Then manually deal with a few issues:
-  - https://github.com/joliss/broccoli-sass/pull/8
-  - https://github.com/joliss/broccoli-kitchen-sink-helpers/issues/3
-  - https://github.com/joliss/broccoli/pull/91
+- Then deal with a few issues:
+  - Update `emberconf-2014-demo/node_modules/broccoli-static-compiler/node_modules/broccoli-kitchen-sink-helpers/index.js` with one of the patches from https://github.com/joliss/broccoli-kitchen-sink-helpers/issues/3.
   - Manually remove the `readme.md` file from `vendor/accounting`
+
+## Known Issues
+
+This is an error, but it's safe and things work anyway thanks to the magic of require:
+```
+>> Errors found in module import statements
+>> emberconf-2014-demo/utils/ic-ajax-fixtures: Cannot find module "ic-ajax"
+```
 
 ## Temporary Build Fixes
 
@@ -27,11 +39,4 @@ If you get an error on `ember build` simliar to the following then, refer to [br
 
 ```sh
 Error: EEXIST, file already exists 'tmp/tree_merger-tmp_dest_dir-Gca7u4E2.tmp/license'`
-```
-
-If you get an error on `ember build` simlilar to the following th, refer to [broccoli-kitchen-sink-helpers/commit/f4c270acbb8ced8a4bafd130e4290813f20350c9](https://github.com/nathanhammond/broccoli-kitchen-sink-helpers/commit/f4c270acbb8ced8a4bafd130e4290813f20350c9) for a temporary fix:
-
-```sh
-Error: /Applications/MAMP/htdocs/emberconf-2014-demo/tmp/template_filter-tmp_dest_dir-wBaEB4g1.tmp/emberconf-2014-demo/styles/app.scss:7: error: file to import not found or unreadable: 'normalize'
- [string exception]
 ```
